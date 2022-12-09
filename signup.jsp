@@ -27,7 +27,7 @@
 		int tmp = 0;
 		
         while (rs.next()) {
-            response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/var/www/html/signup.html");
+            response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signup.html");
             tmp = 1;
         }
 		
