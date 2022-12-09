@@ -6,9 +6,9 @@
 	Connection conn = null;
 	ResultSet rs = null;
       
-	String url = "jdbc:mysql://localhost:3306/llj_db?serverTimezone=UTC";
-	String id = "root";
-	String pwd = "qwer1234";
+	String url = "jdbc:mysql://10.10.31.11:3306/llj_db?serverTimezone=UTC";
+	String id = "llj";
+	String pwd = "QWERqwer1234!@";
 	
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -40,7 +40,7 @@
 
 		conn.close();
 	
-		response.sendRedirect("http://localhost/login.html");
+		response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/login.html");
 	} catch (Exception e) {
 
 	e.printStackTrace();

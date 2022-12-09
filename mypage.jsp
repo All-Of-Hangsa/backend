@@ -11,9 +11,9 @@ response.setHeader("Access-Control-Allow-Origin","*");
 	ResultSet rs = null;
 	ResultSet rs2 = null;
       
-	String url = "jdbc:mysql://localhost:3306/llj_db?serverTimezone=UTC";
-	String id = "root";
-	String pwd = "qwer1234";
+	String url = "jdbc:mysql://10.10.31.11:3306/llj_db?serverTimezone=UTC";
+	String id = "llj";
+	String pwd = "QWERqwer1234!@";
 	
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
