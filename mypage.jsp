@@ -20,9 +20,9 @@ response.setHeader("Access-Control-Allow-Origin","*");
 		conn = DriverManager.getConnection(url, id, pwd);
 		Statement stmt = conn.createStatement();
     
-		String title = request.getParameter("title");
+		String mname = request.getParameter("member");
 		
-		String sql = "SELECT * FROM board, images WHERE board.title=images.title AND board.title = '"+ title +"';";
+		String sql = "select * from booking, board where booking.board_title = board.title AND booking.member_name = '"+mname+"'";
 		rs = stmt.executeQuery(sql);
 
 		
@@ -30,17 +30,10 @@ response.setHeader("Access-Control-Allow-Origin","*");
 	    JSONArray jsonarr = new JSONArray();
 	    while (rs.next()) {
 	    	JSONObject data = new JSONObject();
-	        data.put("title", rs.getString("title"));
-	        data.put("content", rs.getString("content"));
+	        data.put("writer", rs.getString("writer"));
+	        data.put("board_title", rs.getString("board_title"));
 	        data.put("region", rs.getString("region"));
-	        data.put("dregion", rs.getString("dregion"));
-	        data.put("btype", rs.getString("btype"));
-	        data.put("sdate", rs.getString("sdate"));
-	        data.put("edate", rs.getString("edate"));
-	        data.put("path1", rs.getString("path1"));
-	        data.put("path2", rs.getString("path2"));
-	        data.put("path3", rs.getString("path3"));
-	        data.put("path4", rs.getString("path4"));
+	        data.put("bdate", rs.getString("bdate"));
 	        jsonarr.add(data);
 
 		} 
