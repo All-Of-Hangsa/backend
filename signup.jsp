@@ -7,9 +7,9 @@
 	Connection conn = null;
 	ResultSet rs = null;
       
-	String url = "jdbc:mysql://localhost:3306/llj_db?serverTimezone=UTC";
+	String url = "jdbc:mysql://llj-db-lb-15022424-1406c108fa23.kr.lb.naverncp.com:3306/llj_db?serverTimezone=UTC";
 	String id = "root";
-	String pwd = "qwer1234";
+	String pwd = "QWERqwer1234!@";
 	
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -27,7 +27,7 @@
 		int tmp = 0;
 		
         while (rs.next()) {
-            response.sendRedirect("http://localhost/signup.html");
+            response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/var/www/html/signup.html");
             tmp = 1;
         }
 		
@@ -35,7 +35,7 @@
 			String sql = "INSERT INTO member (mail, pwd, nickname, usertype) VALUES ('"+umail+"', '"+upw1+"', '"+uname+"', '"+utype+"');";
 			int result = stmt.executeUpdate(sql);
 		} else {
-			response.sendRedirect("http://localhost/signup.html");
+			response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signup.html");
 		}
 
 	
@@ -43,7 +43,7 @@
 
 		conn.close();
 		
-		response.sendRedirect("http://localhost/signin.html");
+		response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signin.html");
 	} catch (Exception e) {
 
 		e.printStackTrace();
