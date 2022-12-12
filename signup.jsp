@@ -27,7 +27,7 @@
 		int tmp = 0;
 		
         while (rs.next()) {
-            response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signup.html");
+            response.sendRedirect("https://www.haengsa.kro.kr/signup.html");
             tmp = 1;
         }
 		
@@ -35,7 +35,7 @@
 			String sql = "INSERT INTO member (mail, pwd, nickname, usertype) VALUES ('"+umail+"', '"+upw1+"', '"+uname+"', '"+utype+"');";
 			int result = stmt.executeUpdate(sql);
 		} else {
-			response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signup.html");
+			response.sendRedirect("https://www.haengsa.kro.kr/signup.html");
 		}
 
 	
@@ -43,7 +43,7 @@
 
 		conn.close();
 		
-		response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signin.html");
+		response.sendRedirect("https://www.haengsa.kro.kr/signin.html");
 	} catch (Exception e) {
 
 		e.printStackTrace();

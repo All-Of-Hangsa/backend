@@ -25,15 +25,15 @@
 			if (rs.getString("pwd").equals(upw1)) {
 			session.setAttribute("nickname", rs.getString("nickname"));
 		} 	else {
-			response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signin.html");
+			response.sendRedirect("https://www.haengsa.kro.kr/signin.html");
 				} 
 		}else{
-			response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/signin.html");
+			response.sendRedirect("https://www.haengsa.kro.kr/signin.html");
 		}
 		
 		String nickname = rs.getString("nickname");
 		conn.close();
-		response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/login.html?member=" + nickname);
+		response.sendRedirect("https://www.haengsa.kro.kr/login.html?member=" + nickname);
 		
 	} catch (Exception e) {
 

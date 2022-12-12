@@ -40,7 +40,7 @@
 
 		conn.close();
 	
-		response.sendRedirect("http://llj-web-lb-15022402-b5dd0ab26565.kr.lb.naverncp.com/login.html");
+		response.sendRedirect("https://www.haengsa.kro.kr/login.html");
 	} catch (Exception e) {
 
 	e.printStackTrace();
