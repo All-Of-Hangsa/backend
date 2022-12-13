@@ -1,5 +1,4 @@
 <%@page import="java.sql.*"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -18,25 +17,13 @@
 
                 request.setCharacterEncoding("UTF-8");
                 response.setContentType("text/html;charset=UTF-8");
-                String sdate = request.getParameter("start_date");
-                String edate = request.getParameter("end_date");
-                String region = request.getParameter("region");
-                String dregion = request.getParameter("dregion");
-                String type = request.getParameter("type");
                 String title = request.getParameter("title");
-                String body = request.getParameter("body");
-                Object tmp_writer = session.getAttribute("nickname");
-                String writer = (String)tmp_writer;
 
-                String sql = "insert into board (title, content, region, dregion, btype, sdate, edate, admit, writer) values ('"+title+"', '"+body+"', '"+region+"', '"+dregion+"', '"+type+"', '"+sdate+"', '"+edate+"', 'No', '"+writer+"');";
+                String sql = "DELETE FROM board WHERE title='"+title+"';";
                 int result = stmt.executeUpdate(sql);
-
-
-
-
                 conn.close();
 
-                response.sendRedirect("https://www.haengsa.kro.kr/login.html");
+                response.sendRedirect("https://www.haengsa.kro.kr");
         } catch (Exception e) {
 
                 e.printStackTrace();
